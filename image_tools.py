@@ -28,7 +28,7 @@ class image_tools(object):
         if save == True:
             cv2.imwrite("panorama.jpg",panorama_img)
         cv2.imshow("panorama.jpg",panorama_img)
-        cv2.waitKey(5000)
+        cv2.waitKey(10000)
         return panorama_img
 
     def __FindHomographicMatrix(self,img1,img2):
