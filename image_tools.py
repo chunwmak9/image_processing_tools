@@ -2,8 +2,6 @@ import numpy as np
 import imutils
 import cv2
 
-
-
 class image_tools(object):
     def __init__(self):
         pass
@@ -92,7 +90,16 @@ class image_tools(object):
         output_img[translation_dist[1]:rows1+translation_dist[1], translation_dist[0]:cols1+translation_dist[0]] = img1
         
         return output_img
+    def pixelate(self,img_path,pixel_img_size): #e.g img_path = "./face.png",pixel_img_size = (20,20)
+        img_path = img_path
+        input = cv2.imread(img_path)
+        i_h,i_w = input.shape[:2]
+        o_h,o_w = pixel_img_size
+        temp_image = cv2.resize(input,(o_w,o_h),interpolation=cv2.INTER_LINEAR)
+        #compress image into pixelated size
 
+        output = cv2.resize(temp_image,(i_w,i_h),interpolation=cv2.INTER_NEAREST)   
+        return output
 if __name__ == "__main__":
     img_tools = image_tools()
     img_tools.ConvertVideoToPanorama("wall_paint.MOV",save=False,steps=5) #Function 1: ConvertVideoToPanorama
