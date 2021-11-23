@@ -6,3 +6,6 @@ It is a image processing toolkit for providing API to easily process images with
 Input: wall_paint.MOV<br>
 Output:<br>
 <img src="panorama.jpg" alt="panorama" width="600" height ="600" />
+
+<br>
+2. Pixelate image<br>
